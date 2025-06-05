@@ -1,16 +1,12 @@
 # Portafolio – DGSI 2024‑2025
-
-> *Guía de uso*: Rellena cada sección siguiendo las indicaciones en cursiva y borra estos comentarios cuando termines.
-
 ---
 
 ## 1. Portada
 
 * 🎓 **Título del proyecto**: *Portafolio – DGSI 2024‑2025*
-* 🏷️ **Alumno**: *Nombre y apellidos*
-* 📛 **N.º Matrícula**: *XXXXXXXX*
-* 👨‍🏫 **Docente**: *Marc Alier Forment*
-* 📅 **Fecha**: *dd‑mm‑aaaa*
+* 🏷️ **Alumno**: *Óliver Eduardo Chan Dorado*
+* 👨‍🏫 **Profesor**: *Marc Alier Forment*
+* 📅 **Fecha**: *05‑06‑2025*
 
 ---
 
@@ -21,17 +17,17 @@
 * [3. Introducción](#3-introducción)
 * [4. Proyectos y Actividades](#4-proyectos-y-actividades)
 
-  * [4.1 Trasncripión de SRTs](#41-trasncripión-de-srts)
+  * [4.1 Transcripción de SRTs](#41-transcripción-de-srts)
   * [4.2 Webscraping fib.upc.edu](#42-webscraping-fibupcedu)
   * [4.3 Embeddings](#43-embeddings)
   * [4.4 Simple RAG](#44-simple-rag)
-  * [4.5 RAG semantico](#45-rag-semantico)
+  * [4.5 RAG semántico](#45-rag-semántico)
   * [4.6 Gestor de Producción (MRP)](#46-gestor-de-produccion-mrp)
   * [4.7 Agente – Browser Use](#47-agente--browser-use)
   * [4.8 MCP (Model Context Protocol)](#48-mcp-model-context-protocol)
-* [6. Conclusiones Generales](#6-conclusiones-generales)
-* [7. Anexos](#7-anexos)
-* [Nota final](#nota-final)
+  * [4.9 Agent From Scratch](#49-agent-from-scratch)
+* [5. Conclusiones Generales](#5-conclusiones-generales)
+* [6. Créditos](#6-créditos)
 
 ---
 
@@ -39,7 +35,7 @@
 
 La asignatura de **Desarrollo y Gestión de Sistemas de Información** ha explorado la **transformación exponencial del cómputo**, impulsada por avances como la Ley de Moore, que ha multiplicado la capacidad de procesamiento y acelerado el cambio tecnológico. Este fenómeno impacta el **mercado laboral** mediante la irrupción de la **Inteligencia Artificial generativa**, capaz de superar al ser humano en tareas específicas, y origina una **demanda energética masiva** para el entrenamiento de modelos. En este contexto, la materia subraya que la información, por sí sola, no constituye conocimiento; la **semántica** y el **contexto** son esenciales para interpretar los datos y tomar decisiones. Asimismo, se destaca la importancia de **diferenciar problemas y soluciones**, reconociendo que los requisitos en informática caducan con mayor rapidez que en otras disciplinas, de modo que se precisan sistemas adaptables.
 
-Hemos profundizado en la **evolución de la infraestructura de software**, desde la gestión de \*\*sistemas \*\****legacy*** y la **virtualización** (VMware), hasta el paradigma del **Cloud Computing** y la eficiencia de los **contenedores y la orquestación** (Docker, Kubernetes). También se exploró la diversidad del almacenamiento de datos, comparando las **bases relacionales** con las **NoSQL**, priorizando velocidad y escalabilidad según el caso. Un pilar fundamental fue la comprensión de la **IA** mediante **embeddings**, representaciones vectoriales que otorgan significado a los datos y sustentan tecnologías como las **bases vectoriales (ChromaDB)** y la **Generación Aumentada por Recuperación (RAG)**. Además, se analizaron los **agentes de IA**, capaces de planificar y ejecutar tareas complejas mediante herramientas externas.
+Hemos profundizado en la **evolución de la infraestructura de software**, desde la gestión de **sistemas legacy** y la **virtualización** (VMware), hasta el paradigma del **Cloud Computing** y la eficiencia de los **contenedores y la orquestación** (Docker, Kubernetes). También se exploró la diversidad del almacenamiento de datos, comparando las **bases relacionales** con las **NoSQL**, priorizando velocidad y escalabilidad según el caso. Un pilar fundamental fue la comprensión de la **IA** mediante **embeddings**, representaciones vectoriales que otorgan significado a los datos y sustentan tecnologías como las **bases vectoriales (ChromaDB)** y la **Generación Aumentada por Recuperación (RAG)**. Además, se analizaron los **agentes de IA**, capaces de planificar y ejecutar tareas complejas mediante herramientas externas.
 
 La asignatura abordó igualmente los **aspectos organizativos, económicos y políticos** de la tecnología, destacando el concepto de **"skin in the game"** para fomentar la responsabilidad en la toma de decisiones y evitar errores recurrentes. Se examinó cómo la tecnología propicia monopolios y la diferencia entre **IT** (Tecnologías de la Información) y **OT** (Tecnologías Operacionales), donde la continuidad operacional suele primar sobre la seguridad. La **innovación** se definió como una **transformación humana** que conlleva la **democratización, desmonetización y desmaterialización** de productos y servicios. Por último, se debatió el futuro del **desarrollo de software asistido por IA**, los roles de **ciberseguridad** (Red Team y Blue Team), la automatización de **GRC** mediante IA y los **riesgos emergentes de los agentes de IA**, como la exfiltración de datos o el chantaje.
 
@@ -47,7 +43,7 @@ La asignatura abordó igualmente los **aspectos organizativos, económicos y pol
 
 ## 4. Proyectos y Actividades
 
-### 4.1 Trasncripión de SRTs
+### 4.1 Transcripción de SRTs
 
 **Fecha**: Jueves, 20 de Febrero de 2025
 
@@ -447,15 +443,15 @@ OpenAI API Key (mejor rendimiento)
 ### Métricas de Rendimiento y Escalabilidad
 
 * **Indexación**: \~50‑100 documentos/minuto (dependiendo del tamaño)
-* **Búsqueda**: <200 ms por consulta con OpenAI embeddings
-* **Memoria**: \~2 GB RAM para corpus de 1000 documentos
-* **Precision\@5**: >85 % en consultas académicas específicas
-* **Escalabilidad**: Testado con corpus de hasta 10 000 documentos
+* **Búsqueda**: <200 ms por consulta con OpenAI embeddings
+* **Memoria**: \~2 GB RAM para corpus de 1000 documentos
+* **Precision\@5**: >85 % en consultas académicas específicas
+* **Escalabilidad**: Testado con corpus de hasta 10 000 documentos
 * **Costo operacional**: \~\$0.01‑0.05 por consulta completa (Retrieval + Generation)
 
 ---
 
-### 4.5 RAG semantico
+### 4.5 RAG semántico
 
 **Fecha**: Jueves, 20 de Marzo de 2025
 
@@ -466,7 +462,7 @@ OpenAI API Key (mejor rendimiento)
 
 ## *Descripción General*
 
-**LLM Chat RAG** es una aplicación de chatbot avanzada que implementa el patrón **Retrieval Augmented Generation (RAG)** utilizando tecnologías de vanguardia como OpenAI GPT‑4o‑mini, ChromaDB y FastAPI. El sistema combina OCR, búsqueda semántica y generación de respuestas contextuales, reduciendo al mínimo las “alucinaciones” al fundamentar cada respuesta en documentos reales indexados.
+**LLM Chat RAG** es una aplicación de chatbot avanzada que implementa el patrón **Retrieval Augmented Generation (RAG)** utilizando tecnologías de vanguardia como OpenAI GPT‑4o‑mini, ChromaDB y FastAPI. El sistema combina OCR, búsqueda semántica y generación de respuestas contextuales, reduciendo al mínimo las "alucinaciones" al fundamentar cada respuesta en documentos reales indexados.
 
 ## Objetivo de la Aplicación
 
@@ -513,7 +509,7 @@ Crear un asistente inteligente que combine la potencia de los LLM con la precisi
 
 #### **Stack Tecnológico**
 
-* **Backend**: Python 3.9 + FastAPI
+* **Backend**: Python 3.9 + FastAPI
 * **Base de datos vectorial**: ChromaDB
 * **Modelo de lenguaje**: OpenAI GPT‑4o‑mini
 * **OCR**: Tesseract (soporte español)
@@ -559,20 +555,20 @@ llm-chat-rag/
 
 #### **Componentes Clave**
 
-**Motor RAG (**\`\`**)**
+**Motor RAG (main.py)**
 
 * Implementación completa del patrón RAG
 * Gestión de ChromaDB y embeddings
 * Aumentación inteligente de consultas
 * Interfaz CLI con comandos avanzados
 
-**Aplicación Web (**\`\`**)**
+**Aplicación Web (web_app.py)**
 
 * API REST con FastAPI
 * Gestión de sesiones y historial
 * Integración *seamless* con el motor RAG
 
-**Servicio OCR (**\`\`**)**
+**Servicio OCR (ocr_service.py)**
 
 * Procesamiento independiente de PDFs
 * API dedicada para extracción de texto
@@ -615,7 +611,7 @@ El proyecto presenta un estado **maduro y listo para producción** con las sigui
 
 * Docker y Docker Compose instalados
 * Clave API de OpenAI válida
-* Al menos 2 GB de RAM disponible
+* Al menos 2 GB de RAM disponible
 * Puertos 4000 y 8000 libres
 
 ---
@@ -818,7 +814,7 @@ MRP-DGSI/
 
 ## Descripción General
 
-**browser-use** es una aplicación de automatización web que emplea inteligencia artificial para interactuar con páginas web de forma autónoma. Aprovecha LLMs como GPT‑4o para interpretar instrucciones en lenguaje natural y ejecutarlas directamente en un navegador, automatizando procesos como el llenado de Google Forms.
+**browser-use** es una aplicación de automatización web que emplea inteligencia artificial para interactuar con páginas web de forma autónoma. Aprovecha LLMs como GPT‑4o para interpretar instrucciones en lenguaje natural y ejecutarlas directamente en un navegador, automatizando procesos como el llenado de Google Forms.
 
 ## Objetivo de la Aplicación
 
@@ -837,7 +833,7 @@ MRP-DGSI/
 
 ### Arquitectura Técnica
 
-* **Python 3.11**
+* **Python 3.11**
 * **LangChain + GPT‑4o**
 * **browser\_use** para control del navegador
 * **python‑dotenv** para configuración segura
@@ -860,7 +856,7 @@ browser-use/
 
 ### Configuración y Uso
 
-1. Instalar Python 3.11
+1. Instalar Python 3.11
 2. `pip install browser_use langchain_openai python-dotenv`
 3. Exportar `OPENAI_API_KEY`
 4. Ejecutar `python test.py`
@@ -875,7 +871,7 @@ browser-use/
 
 **MCP (Model Context Protocol)** es un estándar abierto creado por Anthropic que unifica la forma en que los agentes de IA interactúan con herramientas, datos y servicios. Define una comunicación estructurada entre:
 
-* **MCP Host** (p. ej., la app con IA)
+* **MCP Host** (p. ej., la app con IA)
 * **MCP Servers** (adaptadores que traducen las peticiones)
 * **MCP Protocol** (esquema JSON estandarizado)
 
@@ -992,22 +988,206 @@ La IA se conecta a servicios web como GitHub, Notion o Figma.
    * Utilizar infraestructura como Mintlify o Stainless para simplificar el desarrollo
 
 ---
+### 4.9 Agent From Scratch
+**Fecha**: Martes, 27 de Mayo de 2025
 
-## 6. Conclusiones Generales
+## Descripción General
 
-> 💡 Reflexiona sobre tu evolución, obstáculos y próximas acciones.
+**AgentFromScratch.ipynb** es un notebook de Jupyter que implementa un agente de inteligencia artificial desde cero utilizando la API de OpenAI. El proyecto demuestra cómo construir un agente conversacional que puede interactuar con usuarios y utilizar herramientas específicas para resolver problemas matemáticos. Es un ejemplo educativo y práctico de cómo crear un sistema de IA con capacidades de uso de herramientas (tool usage).
+
+## Objetivo de la Aplicación
+
+El objetivo principal del notebook es:
+
+- **Educativo**: Enseñar cómo implementar un agente de IA desde cero sin frameworks complejos
+- **Demostración práctica**: Mostrar la integración de modelos de lenguaje con herramientas externas
+- **Prototipo base**: Proporcionar una base sólida para expandir hacia agentes más complejos
+- **Interacción en tiempo real**: Permitir conversaciones dinámicas entre usuario y agente IA
+
+## Características Principales
+
+### Funcionalidad
+
+- **Agente conversacional**: Interacción bidireccional con usuarios mediante chat
+- **Sistema de herramientas**: Capacidad del agente para ejecutar funciones específicas
+- **Procesamiento de comandos**: Detección automática de solicitudes de uso de herramientas
+- **Historial de conversación**: Mantenimiento del contexto durante la sesión
+- **Herramientas matemáticas integradas**:
+  - `add(x, y)`: Suma de dos números
+  - `multiply(x, y)`: Multiplicación de dos números
+
+### Arquitectura Técnica
+
+**Tecnologías principales:**
+- **Plataforma**: Jupyter Notebook
+- **Lenguaje**: Python 3
+- **Modelo de IA**: GPT-4 (OpenAI)
+- **Biblioteca principal**: `openai` (API oficial)
+- **Procesamiento de texto**: Expresiones regulares (`re`)
+
+**Componentes arquitectónicos:**
+- **Cliente OpenAI**: Gestión de conexión con API de OpenAI
+- **Sistema de prompts**: Definición del comportamiento del agente
+- **Motor de herramientas**: Diccionario de funciones ejecutables
+- **Parser de comandos**: Análisis de respuestas para detectar llamadas a herramientas
+- **Bucle de interacción**: Control de flujo conversacional
+
+### Estructura del Proyecto
+
+```
+DGSI-AgentFromScratch/
+├── .git/                    # Control de versiones Git
+└── AgentFromScratch.ipynb   # Notebook principal con implementación completa
+```
+
+**Estructura del código:**
+```python
+├── Configuración inicial
+│   ├── Importación de librerías (openai, re)
+│   ├── Configuración de API Key
+│   └── Inicialización del cliente OpenAI
+├── Definición del sistema
+│   ├── System prompt (instrucciones del agente)
+│   ├── Historial de conversación
+│   └── Diccionario de herramientas
+└── Bucle principal
+    ├── Input del usuario
+    ├── Llamada a GPT-4
+    ├── Procesamiento de respuesta
+    └── Ejecución de herramientas
+```
+
+**Repositorio**: [GitHub – DGSI-AgentFromScratch](https://github.com/ochand-upc/DGSI-AgentFromScratch)
+
+## Estado del Proyecto
+
+**Estado actual**: Prototipo funcional completamente implementado
+
+**Indicadores de madurez:**
+- ✅ **Implementación completa**: Todas las funcionalidades básicas implementadas
+- ✅ **Sistema de herramientas funcional**: Add y multiply operativos
+- ✅ **Manejo de errores básico**: Validación de herramientas disponibles
+- ✅ **Integración OpenAI**: Uso correcto de la API moderna de OpenAI
+- ✅ **Limitación de turnos**: Control de MAX_TURNS para evitar bucles infinitos
+
+**Características implementadas:**
+- Conversación interactiva con GPT-4
+- Sistema de detección de herramientas mediante regex
+- Ejecución dinámica de funciones
+- Mantenimiento de historial conversacional
+- Retroalimentación de resultados al agente
+
+**Áreas de mejora identificadas:**
+- Ampliación del conjunto de herramientas disponibles
+- Manejo más robusto de errores en argumentos
+- Validación de entrada del usuario
+- Persistencia de conversaciones
+- Interfaz de usuario más sofisticada
+
+## Configuración y Uso
+
+### Prerequisitos
+
+1. **Python 3.x** con Jupyter Notebook
+2. **Bibliotecas requeridas**:
+   ```bash
+   pip install openai
+   ```
+3. **API Key de OpenAI**: Acceso a la API de OpenAI para usar GPT-4
+
+### Configuración inicial
+
+1. **API Key de OpenAI**:
+   ```python
+   openai.api_key = "TU_API_KEY_AQUI"
+   ```
+
+2. **Verificar dependencias**:
+   - Asegurar que la biblioteca `openai` esté actualizada
+   - Confirmar acceso a GPT-4 en la cuenta de OpenAI
+
+### Uso del Notebook
+
+**Ejecución paso a paso:**
+
+1. **Ejecutar la celda principal**: Contiene toda la implementación
+2. **Interactuar con el agente**: Escribir mensajes cuando aparezca "🧑 Tú:"
+3. **Probar herramientas**: Pedir al agente que realice cálculos matemáticos
+
+**Ejemplos de interacciones:**
+
+```
+🧑 Tú: ¿Cuánto es 5 + 3?
+🤖 Agente: TOOL: add(5, 3)
+🛠️ Resultado de add: 8
+🤖 Agente: El resultado de 5 + 3 es 8.
+
+🧑 Tú: Multiplica 4 por 7
+🤖 Agente: TOOL: multiply(4, 7)
+🛠️ Resultado de multiply: 28
+🤖 Agente: El resultado de 4 × 7 es 28.
+```
+
+### Extensibilidad
+
+**Agregar nuevas herramientas:**
+```python
+# Agregar al diccionario de tools
+tools = {
+    "add": lambda x, y: x + y,
+    "multiply": lambda x, y: x * y,
+    "subtract": lambda x, y: x - y,  # Nueva herramienta
+}
+
+# Actualizar el system_prompt para incluir la nueva herramienta
+```
+
+**Personalización del comportamiento:**
+- Modificar el `system_prompt` para cambiar el rol del agente
+- Ajustar `MAX_TURNS` para sesiones más largas o cortas
+- Cambiar el modelo de "gpt-4" a otros modelos disponibles
+
+### Consideraciones de seguridad
+
+- **Evaluación de argumentos**: El código usa `eval()` que puede ser un riesgo de seguridad
+- **Recomendación**: Implementar parseo más seguro para argumentos de herramientas
+- **Validación**: Agregar validación de tipos para los argumentos de las funciones
+
+Este notebook representa una excelente base para entender cómo construir agentes de IA con capacidades de herramientas, proporcionando un ejemplo claro y extensible para desarrolladores que quieran implementar sus propios sistemas de agentes inteligentes.
+
+
+## 5. Conclusiones Generales
+
+La experiencia en la asignatura de **Desarrollo y Gestión de Sistemas de Información** ha representado un **viaje transformador** que ha redefinido mi comprensión sobre el desarrollo de software y la aplicación de inteligencia artificial en la gestión empresarial. A través de una serie de desafíos prácticos y proyectos colaborativos, he experimentado una evolución significativa tanto en competencias técnicas como en metodologías de trabajo.
+
+### Desafíos Iniciales y Curva de Aprendizaje
+
+El **mayor obstáculo al inicio** fue la complejidad conceptual inherente a la inteligencia artificial, particularmente en el ecosistema de **Large Language Models (LLMs)**. Conceptos como embeddings, arquitecturas transformer, y sistemas RAG requerían no solo comprensión técnica, sino una **reconceptualización fundamental** de cómo abordar problemas de procesamiento de información. Esta barrera inicial se intensificó por la **falta de definición clara de roles** en los equipos de trabajo, lo que generó ineficiencias en la colaboración y distribución de responsabilidades.
+
+Adicionalmente, la **ambigüedad en los objetivos** de cada hackathon representó un desafío metodológico significativo. Sin embargo, esta dificultad me llevó a desarrollar una **estrategia personal de aprendizaje**: comenzé a grabar las exposiciones del profesor para posteriormente analizarlas con **NotebookLM**, transformando el contenido en conocimiento estructurado y aplicable.
+
+### Evolución en Metodologías de Desarrollo
+
+Uno de los **insights más relevantes** ha sido reafirmar que la calidad de cualquier solución tecnológica depende fundamentalmente de la **comprensión profunda del problema**. Esta premisa, aunque conocida teóricamente, adquirió nueva dimensión al observar cómo los LLMs pueden generar soluciones técnicamente correctas pero conceptualmente inadecuadas cuando el problema no está bien definido.
+
+El **Vibe Coding** inicialmente me resultó una metodología disruptiva y contraintuitiva. Requirió un proceso de **"desaprendizaje"** de patrones tradicionales de programación para adoptar un enfoque más colaborativo con la IA. Gradualmente comprendí que el rol del programador se ha transformado: ahora la competencia crítica radica en la **capacidad de interpretar, evaluar y refinar** las propuestas generadas por los LLMs, más que en la escritura manual de código desde cero.
+
+### Implicaciones para el Futuro del Desarrollo
+
+La integración de **LLMs y agentes autónomos** en el proceso de desarrollo evidencia la necesidad urgente de **nuevas metodologías y marcos de trabajo**. Los paradigmas tradicionales de ingeniería de software requieren adaptación para incorporar la **colaboración humano-IA** de manera efectiva. Esta observación representa una **oportunidad de investigación** significativa que podría redefinir las mejores prácticas en desarrollo de sistemas de información.
+
+### Valoración de la Experiencia Académica
+
+La **metodología pedagógica** empleada en el curso ha sido extraordinariamente efectiva. El enfoque basado en **retos prácticos y del mundo real** facilitó un aprendizaje experiencial que va más allá de la adquisición de conocimientos teóricos. La dinámica de mini-hackathons permitió experimentar con tecnologías emergentes en contextos aplicados, generando un entendimiento más profundo y duradero.
+
+### Perspectivas Profesionales
+
+Esta experiencia ha **reafirmado y expandido** mi vocación profesional en el desarrollo de sistemas de información para la gestión organizacional. Sin embargo, ahora con una perspectiva enriquecida que integra las **capacidades transformadoras de la IA** como herramienta de valor empresarial. El aprendizaje adquirido no solo representa competencias técnicas adicionales, sino un **cambio paradigmático** en cómo conceptualizar y ejecutar proyectos de sistemas de información.
+
+La intersección entre **gestión empresarial e inteligencia artificial** se presenta como un campo de oportunidades extraordinarias, donde la capacidad de traducir necesidades organizacionales complejas en soluciones tecnológicas inteligentes será cada vez más valorada. Este portafolio documenta no solo proyectos completados, sino la **evolución de una mentalidad** preparada para liderar la próxima generación de sistemas de información empresarial.
 
 ---
 
-## 7. Anexos
+## 6. Créditos
 
-1. 📄 **Changelog de Git**
-2. 📝 **Lista de Issues cerrados**
-3. 🗺️ **Diagramas** (BPMN, arquitectura, ER)
-4. 🌐 **Política de despliegue / multitenancy**
-
----
-
-### Nota final
-
-Guarda este archivo como `portfolio/README.md` y exporta a PDF cuando esté completo. Usa commits enlazados a Issues: `git commit -m "docs(portfolio): rellenar sección 4.1 (refs #45)"`
+Agradecimiento especial a mis compañeros de equipo **Carlos Rodríguez**, **Juan José Acevedo**, **Ixent Cornella**, **Carla Claramunt**, **Jofre Coll** y al profesor **Marc Alier**.
