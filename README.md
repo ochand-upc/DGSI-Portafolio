@@ -22,12 +22,13 @@
   * [4.3 Embeddings](#43-embeddings)
   * [4.4 Simple RAG](#44-simple-rag)
   * [4.5 RAG semántico](#45-rag-semántico)
-  * [4.6 Gestor de Producción (MRP)](#46-gestor-de-produccion-mrp)
+  * [4.6 Gestor de Producción (MRP)](#46-gestor-de-producción-mrp)
   * [4.7 Agente – Browser Use](#47-agente--browser-use)
   * [4.8 MCP (Model Context Protocol)](#48-mcp-model-context-protocol)
   * [4.9 Agent From Scratch](#49-agent-from-scratch)
 * [5. Conclusiones Generales](#5-conclusiones-generales)
-* [6. Créditos](#6-créditos)
+* [6. Índice de Repositorios](#6-índice-de-repositorios)
+* [7. Créditos](#7-créditos)
 
 ---
 
@@ -1188,6 +1189,20 @@ La intersección entre **gestión empresarial e inteligencia artificial** se pre
 
 ---
 
-## 6. Créditos
+## 6. Índice de Repositorios
+
+* **Transcripción de SRTs**: [GitHub – Mini‑Hackaton‑1‑DGSI](https://github.com/Jofrix98UPC/Mini-Hackaton-1-DGSI)
+* **Webscraping fib.upc.edu**: [GitHub – Mini‑Hackathon‑Markdown](https://github.com/carlos-andres-rodriguez-torres/Mini-Hackathon-Markdown/)
+* **Embeddings**: [GitHub – Mini‑Hackaton‑Embeddings](https://github.com/ro-carlos/Mini-Hackaton-Embeddings)
+* **Simple RAG**: [GitHub – Mini‑Hackathon‑LLM](https://github.com/ochand-upc/Mini-Hackathon-LLM)
+* **RAG semántico**: [GitHub – llm-chat-rag](https://github.com/ochand-upc/llm-chat-rag)
+* **Gestor de Producción (MRP)**: [GitHub – MRP-DGSI](https://github.com/ochand-upc/MRP-DGSI)
+* **Agente – Browser Use**: [GitHub – browser-use](https://github.com/ro-carlos/browser-use)
+* **MCP (Model Context Protocol)**: *No requiere repositorio específico*
+* **Agent From Scratch**: [GitHub – DGSI-AgentFromScratch](https://github.com/ochand-upc/DGSI-AgentFromScratch)
+
+---
+
+## 7. Créditos
 
 Agradecimiento especial a mis compañeros de equipo **Carlos Rodríguez**, **Juan José Acevedo**, **Ixent Cornella**, **Carla Claramunt**, **Jofre Coll** y al profesor **Marc Alier**.
