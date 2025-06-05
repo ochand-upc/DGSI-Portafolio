@@ -26,6 +26,9 @@
   * [4.3 Embeddings](#43-embeddings)
   * [4.4 Simple RAG](#44-simple-rag)
   * [4.5 RAG semantico](#45-rag-semantico)
+  * [4.6 Gestor de Producción (MRP)](#46-gestor-de-produccion-mrp)
+  * [4.7 Agente – Browser Use](#47-agente--browser-use)
+  * [4.8 MCP (Model Context Protocol)](#48-mcp-model-context-protocol)
 * [6. Conclusiones Generales](#6-conclusiones-generales)
 * [7. Anexos](#7-anexos)
 * [Nota final](#nota-final)
@@ -556,20 +559,20 @@ llm-chat-rag/
 
 #### **Componentes Clave**
 
-**Motor RAG (`main.py`)**
+**Motor RAG (**\`\`**)**
 
 * Implementación completa del patrón RAG
 * Gestión de ChromaDB y embeddings
 * Aumentación inteligente de consultas
 * Interfaz CLI con comandos avanzados
 
-**Aplicación Web (`web_app.py`)**
+**Aplicación Web (**\`\`**)**
 
 * API REST con FastAPI
 * Gestión de sesiones y historial
 * Integración *seamless* con el motor RAG
 
-**Servicio OCR (`ocr_service.py`)**
+**Servicio OCR (**\`\`**)**
 
 * Procesamiento independiente de PDFs
 * API dedicada para extracción de texto
@@ -614,6 +617,379 @@ El proyecto presenta un estado **maduro y listo para producción** con las sigui
 * Clave API de OpenAI válida
 * Al menos 2 GB de RAM disponible
 * Puertos 4000 y 8000 libres
+
+---
+
+### 4.6 Gestor de Producción (MRP)
+
+**Fecha**: Jueves, 15 de Mayo de 2025
+
+**Presentación**
+
+* Presentación del Proyecto : [Presentación de Google – Módulo MRP](https://docs.google.com/presentation/d/1-8os8Jm-6iEftNWjcwCgebZhXh8K9B8gDBkvZU5VbN8/edit?usp=sharing)
+
+## Descripción General
+
+El **MRP-DGSI** es un simulador avanzado de producción de impresoras 3D que implementa un sistema completo de **Material Requirements Planning (MRP)**. La aplicación modela día a día el ciclo operativo de una planta de fabricación, enfocándose en tres aspectos fundamentales: **gestión de inventarios**, **compras** y **planificación de la producción**.
+
+El sistema permite a los usuarios asumir el rol de planificadores de producción, tomando decisiones estratégicas sobre qué fabricar y qué comprar para satisfacer la demanda de manera eficiente. La aplicación genera demanda de forma aleatoria y requiere que el usuario gestione recursos limitados para cumplir con los pedidos.
+
+---
+
+## Objetivo de la Aplicación
+
+### Objetivos Principales
+
+* **Simulación Realista**: Modelar de manera fidedigna el proceso de producción de impresoras 3D con componentes reales
+* **Educación y Entrenamiento**: Proporcionar una herramienta didáctica para estudiantes y profesionales en ingeniería de sistemas, producción y gestión de operaciones
+* **Base Arquitectónica**: Diseñar un sistema MRP escalable que pueda servir como fundamento para implementaciones empresariales
+* **Desarrollo de Habilidades**: Permitir la práctica y mejora de habilidades en planificación de producción y gestión de cadena de suministro
+
+### Usuarios Objetivo
+
+* Estudiantes de ingeniería de sistemas, producción y gestión de operaciones
+* Arquitectos de sistemas de información
+* Profesionales en formación en gestión de cadena de suministro
+* Educadores que buscan herramientas didácticas para enseñar conceptos de planificación
+
+---
+
+## Características Principales
+
+### Funcionalidad
+
+#### **Simulación Basada en Eventos Discretos**
+
+* Motor de simulación implementado con **SimPy** que ejecuta ciclos diarios de 24 horas
+* Generación aleatoria de pedidos con parámetros configurables (media: 5.0, desviación estándar: 2.0)
+* Capacidad de producción diaria configurable (10 impresoras por día por defecto)
+
+#### **Gestión de Inventarios**
+
+* Seguimiento en tiempo real de materias primas y productos terminados
+* Capacidad de almacén configurada (1000 unidades por defecto)
+* Alertas automáticas de inventario insuficiente
+* Visualización detallada de niveles de stock
+
+#### **Sistema de Compras**
+
+* Catálogo de proveedores con precios y tiempos de entrega diferenciados
+* Gestión de órdenes de compra con seguimiento de estado
+* Cálculo automático de fechas de entrega basado en lead times
+* Múltiples proveedores por producto con diferentes condiciones comerciales
+
+#### **Planificación de Producción**
+
+* **Lista de Materiales (BOM)** configurada para dos modelos de impresoras:
+
+  * **P3D-Classic**: Modelo base con componentes estándar
+  * **P3D-Pro**: Modelo avanzado con sensores adicionales
+* Liberación manual de órdenes a producción con verificación automática de materiales
+* Gestión de cola de producción limitada por capacidad diaria
+
+##### **Modelos de Productos**
+
+**P3D-Classic** (Modelo Base):
+
+* 1 kit\_piezas
+* 1 pcb (CTRL-V2)
+* 1 extrusor
+* 2 cables\_conexion
+* 1 transformador\_24v
+* 1 enchufe\_schuko
+
+**P3D-Pro** (Modelo Avanzado):
+
+* 1 kit\_piezas
+* 1 pcb (CTRL-V3)
+* 1 extrusor
+* 1 sensor\_autonivel
+* 3 cables\_conexion
+* 1 transformador\_24v
+* 1 enchufe\_schuko
+
+#### **Reportes y Análisis**
+
+* Historial completo de eventos con filtros por fecha y tipo
+* Visualización gráfica de niveles de stock históricos
+* Análisis de pedidos completados en el tiempo
+* Exportación e importación de datos en formato JSON
+
+### Arquitectura Técnica
+
+#### **Principios de Diseño**
+
+Sistema basado en **Arquitectura Hexagonal** garantizando separación de responsabilidades, independencia de frameworks y alta testabilidad.
+
+#### **Stack Tecnológico**
+
+| Componente       | Tecnología       | Justificación              |
+| ---------------- | ---------------- | -------------------------- |
+| **Lenguaje**     | Python 3.11+     | Ecosistema robusto         |
+| **Simulación**   | SimPy 4.0.2      | Motor de eventos discretos |
+| **API REST**     | FastAPI 0.104.1  | Alto rendimiento           |
+| **UI**           | Streamlit 1.28.0 | Dashboards rápidos         |
+| **Validación**   | Pydantic 2.4.2   | Datos confiables           |
+| **BDD**          | SQLite           | Ligero y portable          |
+| **Gráficos**     | Altair 5.1.2     | Declarativo                |
+| **Contenedores** | Docker & Compose | Despliegue consistente     |
+
+#### **Capas de la Arquitectura**
+
+```
+(Presented ASCII diagram)
+```
+
+### Estructura del Proyecto
+
+```text
+MRP-DGSI/
+├── application/
+│   ├── services.py
+│   └── simulation.py
+├── config/
+│   ├── di_container.py
+│   └── settings.py
+├── domain/
+│   ├── models.py
+│   ├── repositories.py
+│   └── services.py
+├── infrastructure/
+│   ├── database.py
+│   ├── data_export.py
+│   └── repositories.py
+├── presentation/
+│   ├── api.py
+│   └── streamlit_app.py
+├── data/
+│   ├── config.json
+│   └── simulator.db
+├── docs/
+│   ├── PRD.md
+│   └── architecture.md
+├── scripts/
+│   ├── init_db.py
+│   └── export_import.py
+├── docker-compose.yml
+├── Dockerfile
+├── main.py
+└── requirements.txt
+```
+
+**Repositorio**: [GitHub – MRP-DGSI](https://github.com/ochand-upc/MRP-DGSI)
+
+## Estado del Proyecto
+
+### **Estado Actual: COMPLETAMENTE FUNCIONAL**
+
+#### **Características Implementadas ✅**
+
+* Motor de simulación completo
+* API REST con documentación
+* UI Streamlit interactiva
+* Sistema de inventarios y órdenes
+* Múltiples proveedores y visualización gráfica
+* Containerización Docker
+
+#### **Calidad del Código**
+
+* Arquitectura limpia, SOLID, logging, validación
+
+#### **Testing y Estabilidad**
+
+* Sistema probado en escenarios educativos
+
+---
+
+## Configuración y Uso
+
+### **Flujo de Uso del Sistema**
+
+1. Revisar estado (pedidos, inventario)
+2. Liberar órdenes a producción
+3. Emitir órdenes de compra
+4. "Avanzar día" para ejecutar simulación
+
+---
+
+### 4.7 Agente – Browser Use
+
+**Fecha**: Jueves, 15 de Mayo de 2025
+
+## Descripción General
+
+**browser-use** es una aplicación de automatización web que emplea inteligencia artificial para interactuar con páginas web de forma autónoma. Aprovecha LLMs como GPT‑4o para interpretar instrucciones en lenguaje natural y ejecutarlas directamente en un navegador, automatizando procesos como el llenado de Google Forms.
+
+## Objetivo de la Aplicación
+
+* 🤖 **Automatizar tareas web** a partir de instrucciones en lenguaje humano.
+* 🌐 Navegar a URLs indicadas y manipular elementos (inputs, botones).
+* 📝 Completar formularios complejos de manera automática.
+
+## Características Principales
+
+### Funcionalidad
+
+* **Automatización basada en IA** con GPT‑4o.
+* **Procesamiento de lenguaje natural** para definir tareas.
+* **Interacción web avanzada**: navegación, clics y llenado de formularios.
+* **Integración OpenAI** vía LangChain.
+
+### Arquitectura Técnica
+
+* **Python 3.11**
+* **LangChain + GPT‑4o**
+* **browser\_use** para control del navegador
+* **python‑dotenv** para configuración segura
+
+### Estructura del Proyecto
+
+```text
+browser-use/
+├── README.md
+├── test.py               # Script de demostración
+└── .git/                 # Control de versiones
+```
+
+**Repositorio**: [GitHub – browser-use](https://github.com/ro-carlos/browser-use)
+
+### Estado del Proyecto
+
+* 🚧 **Prototipo funcional** con agente IA y llenado de Google Forms
+* ✅ Integración OpenAI y variables de entorno
+
+### Configuración y Uso
+
+1. Instalar Python 3.11
+2. `pip install browser_use langchain_openai python-dotenv`
+3. Exportar `OPENAI_API_KEY`
+4. Ejecutar `python test.py`
+
+---
+
+### 4.8 MCP (Model Context Protocol)
+
+**Fecha**: Martes, 20 de Mayo de 2025
+
+## Descripción General
+
+**MCP (Model Context Protocol)** es un estándar abierto creado por Anthropic que unifica la forma en que los agentes de IA interactúan con herramientas, datos y servicios. Define una comunicación estructurada entre:
+
+* **MCP Host** (p. ej., la app con IA)
+* **MCP Servers** (adaptadores que traducen las peticiones)
+* **MCP Protocol** (esquema JSON estandarizado)
+
+## Objetivo de la Aplicación (MCP)
+
+1. 🌉 **Superar la brecha de interacción** entre IA y mundo real.
+2. 📐 **Estandarización universal** de integraciones.
+3. 🤖 **Autonomía real** para tareas multi‑paso.
+4. 📈 **Escalabilidad** sin romper compatibilidad.
+
+## Características Principales
+
+### Funcionalidades Core
+
+* 🔌 **Plug‑and‑Play**: conectar cualquier herramienta MCP sin código personalizado.
+* ⏱️ **Interacción en tiempo real** para tareas multi‑servicio.
+* 📚 **Protocolo unificado**: un estándar para todas las herramientas.
+* 🌍 **Compatibilidad universal** local o remota.
+
+### Ventajas Clave
+
+| **Aspecto**    | **APIs Tradicionales** | **MCP**           |
+| -------------- | ---------------------- | ----------------- |
+| Setup          | Manual por herramienta | Un único estándar |
+| Flexibilidad   | Fija                   | Dinámica          |
+| Reutilización  | Difícil                | Automática        |
+| Escalabilidad  | Se rompe               | Preparada         |
+| Compatibilidad | Lógica a medida        | *Out‑of‑the‑box*  |
+| Descubrimiento | Manual                 | Automático        |
+
+### Beneficios 🚀
+
+* **Agentes autónomos** capaces de actuar.
+* **Compatibilidad universal** para conectar todo.
+* **Eficiencia**: menos tiempo de integración.
+* **Seguridad estandarizada**.
+
+## Conexión con Nuestra Experiencia en el Chat
+
+Lo que hemos experimentado en este chat es un **ejemplo perfecto de MCP en acción**:
+
+### Implementación Práctica
+
+1. **Desktop Commander** actúa como un MCP Server que traduce mis solicitudes de IA en comandos del sistema
+
+### Acciones Realizadas
+
+* ✅ Terminé Microsoft Word (`kill_process`)
+* ✅ Abrí Google Chrome (`open -a "Google Chrome"`)
+* ✅ Listé procesos en ejecución (`list_processes`)
+* ✅ Todo sin necesidad de integraciones personalizadas
+
+### Beneficios Observados
+
+#### **Plug-and-Play**
+
+No necesité configuración especial para interactuar con tu sistema.
+
+#### **Tiempo Real**
+
+Las acciones se ejecutaron inmediatamente.
+
+#### **Estándar**
+
+Uso la misma interfaz para diferentes tipos de operaciones del sistema.
+
+## Aplicaciones del Mundo Real
+
+### 💻 **Desarrollo de Software**
+
+La IA lee y escribe código *across* archivos, terminales y proyectos.
+
+### 📊 **Análisis de Datos**
+
+La IA extrae de fuentes de datos estructuradas y genera *insights*.
+
+### 📄 **Gestión de Documentos**
+
+La IA guarda resúmenes como archivos o extrae información de documentos.
+
+### 🔌 **Interacción con APIs**
+
+La IA se conecta a servicios web como GitHub, Notion o Figma.
+
+## El Ecosistema MCP en Crecimiento
+
+### Principales Adoptantes
+
+* Block, Replit, Apollo, Sourcegraph, Codeium y Microsoft Copilot Studio
+
+### Marketplaces Emergentes
+
+* mcpmarket.com
+* mcp.so
+* Cline's MCP Marketplace
+
+### Herramientas de Infraestructura
+
+* Mintlify, Stainless, Speakeasy, Cloudflare, Smithery y Toolbase
+
+## Cómo Empezar con MCP
+
+1. 📚 **Explorar Recursos**
+
+   * Documentación oficial: [https://anthropic.com/news/model-context-protocol](https://anthropic.com/news/model-context-protocol)
+   * Repositorio GitHub: [https://github.com/modelcontextprotocol](https://github.com/modelcontextprotocol)
+2. 🔌 **Probar Servidores Existentes**
+
+   * mcpmarket.com – Marketplace de servidores MCP
+   * mcp.so – Plataforma de servidores plug‑and‑play
+3. 🛠️ **Construir el Tuyo Propio**
+
+   * Crear servidores MCP personalizados para herramientas específicas
+   * Utilizar infraestructura como Mintlify o Stainless para simplificar el desarrollo
 
 ---
 
